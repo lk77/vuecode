@@ -138,6 +138,7 @@ export default {
     },
     leave: function (el, done) {
       el.style.height = 0 + 'px'
+      done()
     },
     resolveLink(text){
       let link = text.replace(/\s/g,'_').toLowerCase()

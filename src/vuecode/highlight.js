@@ -66,7 +66,10 @@ var md = require('markdown-it')({
     if (lang && hljs.getLanguage(lang)) {
       try {
         return `<pre class="hljs"><span data-code="${hljs.highlight(lang, str, true)}" class="flaticon-copy-content icon-copyx"></span><span class="tagx">${lang}</span><code>${hljs.highlight(lang, str, true).value}</code></pre>`;
-      } catch (__) {}
+      }
+      catch (__) {
+          console.log(__);
+      }
     }
 
     return `<pre class="hljs"><span data-code="${hljs.highlight(lang, str, true)}" class="flaticon-copy-content icon-copyx"></span><span class="tagx">${lang}</span><code>${md.utils.escapeHtml(str)}</code></pre>`;

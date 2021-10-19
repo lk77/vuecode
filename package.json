@@ -1,35 +1,22 @@
 {
   "name": "vuecode.js",
-  "version": "0.0.27",
+  "version": "1.0.0",
   "private": false,
   "description": "view Code for Vue js",
-  "license": "MIT",
   "author": "ldrovira <luisdanielrovira8@gmail.com>",
-  "homepage": "https://lusaxweb.github.io/vuecode.org/",
-  "repository": "lusaxweb/vuecode",
-  "main": "dist/vuecode.common.js",
-  "unpkg": "dist/vuecode.common.js",
-  "bugs": {
-    "url": "https://github.com/lusaxweb/vuecode/issues"
-  },
-  "keywords": [
-    "vuecode",
-    "vue",
-    "vuejs",
-    "vue-components",
-    "components",
-    "javascript",
-    "css"
-  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue build -t lib src/vuecode/index.js --name vuecode",
     "lint": "vue-cli-service lint",
-    "v": "npm version patch",
+    "deploy": "npm run build & git add . & git commit -m 'deploy' & npm run v & npm run p && git push",
     "p": "npm publish",
-    "deploy": "npm run build & git add . & git commit -m 'deploy' & npm run v & npm run p && git push"
+    "v": "npm version patch"
   },
+  "main": "dist/vuecode.common.js",
+  "unpkg": "dist/vuecode.common.js",
   "dependencies": {
+    "@vue/compiler-sfc": "^3.2.20",
+    "core-js": "^3.6.5",
     "escape-html": "^1.0.3",
     "highlight.js": "^9.12.0",
     "highlightjs": "^9.10.0",
@@ -38,14 +25,17 @@
     "prismjs": "^1.14.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
-    "vue": "^2.5.13",
-    "vuex": "^3.0.1"
+    "vue": "3.1.5",
+    "vue-loader": "^16.8.1",
+    "vuex": "^4.0.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0-beta.6",
-    "@vue/cli-plugin-eslint": "^3.0.0-beta.6",
-    "@vue/cli-service": "^3.0.0-beta.6",
-    "vue-template-compiler": "^2.5.13"
+    "@vue/cli-plugin-babel": "~4.5.14",
+    "@vue/cli-plugin-eslint": "~4.5.14",
+    "@vue/cli-service": "~4.5.14",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2"
   },
   "babel": {
     "presets": [
@@ -57,7 +47,11 @@
     "extends": [
       "plugin:vue/essential",
       "eslint:recommended"
-    ]
+    ],
+    "env": {
+      "browser": true,
+      "node": true
+    }
   },
   "postcss": {
     "plugins": {
@@ -68,5 +62,20 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/lusaxweb/vuecode/issues"
+  },
+  "homepage": "https://lusaxweb.github.io/vuecode.org/",
+  "keywords": [
+    "vuecode",
+    "vue",
+    "vuejs",
+    "vue-components",
+    "components",
+    "javascript",
+    "css"
+  ],
+  "license": "MIT",
+  "repository": "lusaxweb/vuecode"
 }
