@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, h } from 'vue'
 import { createStore } from 'vuex'
 import App from './App.vue'
 import Vuecode from './vuecode/index.js'
@@ -10,7 +10,9 @@ const store = createStore({
 });
 
 const app = createApp({
-  render: h => h(App)
+  render() {
+      return h(App);
+  }
 });
 
 app.use(store);
@@ -19,7 +21,7 @@ app.use(Vuecode, {
     // theme:'line'
 });
 
-app.$mount('#app');
+app.mount('#app');
 
 
 

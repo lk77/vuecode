@@ -39,8 +39,7 @@
       </header>
 
       <div :class="{'centex':center}" v-if="$slots.demo" class="demo">
-        <slot name="demo">
-        </slot>
+        <slot name="demo"></slot>
       </div>
 
     <transition
@@ -49,9 +48,7 @@
     v-on:leave="leave"
     >
     <div v-if="$slots.code" v-show="code" ref="code" class="con-code content-vc">
-      <slot name="code">
-
-      </slot>
+      <slot name="code"></slot>
     </div>
     </transition>
     </div>
@@ -106,7 +103,6 @@ export default {
     this.theme = this.$vcoptions.theme || 'shadow'
 
     if(!this.md){
-      console.log("enyro en render");
       let text = this.$refs.code.textContent, code
       if(this.codeHtml){
 

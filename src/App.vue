@@ -2,11 +2,15 @@
   <div class="con-prueba">
     <div class="con-example">
       <vuecode title="Add new proyect vuecode">
-        <div slot="demo">
-          <button class="btn" type="button" name="button">Example</button>
-        </div>
+        <template v-slot:demo>
+          <div>
+            <button class="btn" type="button" name="button">Example</button>
+          </div>
+        </template>
 
-        <div slot="code">
+
+        <template v-slot:code>
+          <div>
 ```js{1,6}
 var btn = document.querySelector('.btn')
 
@@ -14,7 +18,8 @@ btn.addEventListener( 'click' , function(){
   console.log('click')
 })
 ```
-        </div>
+          </div>
+        </template>
       </vuecode>
     </div>
   </div>
