@@ -7,6 +7,6 @@ const Vuecode = {
   }
 }
 if (typeof window !== 'undefined' && window.Vue) {
-  //window.Vue.use(Vuecode)
+  window.Vue.use(Vuecode)
 }
 export default Vuecode
